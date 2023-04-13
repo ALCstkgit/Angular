@@ -1,0 +1,29 @@
+<h1>Datos de Compra</h1>
+<div style="display: flex;" id="contenedor">
+    <div class="contenedores">
+        Correo Electronico:<br><br>
+        Direccion:<br><br>
+        Telefono:<br>
+        Comunidad:<br><br>
+        Forma de Pago:<br>
+    </div>
+    <div class="contenedores">
+        <input type="text" placeholder="Escriba su correo" [(ngModel)]="correo"><br>
+        <textarea placeholder="Escriba sus comentarios" [(ngModel)]="direccion"></textarea><br>
+        <input type="text" placeholder="Escriba su telefono" [(ngModel)]="telefono"><br>
+        <select name="comunidad" id="comunidad" [(ngModel)]="comunidad">
+            <option value="madrid">Madrid</option>
+            <option value="valencia">Valencia</option>
+            <option value="galicia">Galicia</option>
+        </select><br>
+        Efectivo:<input type="radio" name="pago" value="efectivo" checked [(ngModel)]="pago"><br>
+        Tarjeta:<input type="radio" name="pago" value="tarjeta" [(ngModel)]="pago"><br>
+        Contra-reembolso<input type="radio" name="pago" value="contra-reembolso" [(ngModel)]="pago"><br>
+    </div>
+</div>
+
+
+<input type="checkbox" value="aceptar" id="aceptar" name="aceptar" [(ngModel)]="acepta">
+<label for="aceptar">Acepta recibir informacion de nuestros productos</label><br>
+<button (click)="enviarDatos()">Enviar</button>
+<p>{{texto}}</p>

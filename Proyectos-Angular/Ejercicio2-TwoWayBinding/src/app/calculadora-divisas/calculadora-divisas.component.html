@@ -1,0 +1,9 @@
+<h1>Calculadora de Divisas</h1>
+<p>Cantidad a convertir en euros: <input type="number" [(ngModel)]="num"></p>
+<select name="selectCambio" id="selectMoneda" [(ngModel)]="divisa" (change)="calculaCambio()">
+    <option value="1.1">Dolares EEUU</option>
+    <option value="0.88">Libras</option>
+    <option value="146.4">Yenes</option>
+</select>
+<p>{{texto}}</p>
+<hr>

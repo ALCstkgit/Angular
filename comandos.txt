@@ -1,0 +1,39 @@
+1. Angular en visual
+-npm install -g @angular/cli
+
+2. Crear proyectos
+-ng new *nombre_proyecto* (autocomplementado si)
+
+3. Lanzar proyecto
+-ng s -o  (estando en la carpeta del proyecto)
+
+4. Generar componentes, los cuales tienen html, css, ts y ts para pruebas
+-ng g c *componente* --skip-test (para no generar pruebas)
+Puedes crear los ficheros a mano pero tienes que añadirlo todo a app.module.ts
+Al igual que si lo borras o modificas
+
+En app.component.html es lo que se ve en el index
+Para enseñar el titulo del proyecto:
+<p>{{title}}</p>   (dobles llaves para enseñar una variable)
+
+Importar librerias en ngModule TwoWayBindingComponent
+
+
+Ejercicio componentes:
+1. Crear proyecto
+2. Crear componente -> html -> grupo queen (revision de atajos emet):
+-- + Mismo nivel
+-- > padre con hijos
+-- * multiplicar
+-- .<nombre> poner clase
+-- #<nombre> id
+-- ^ salir de nivel más bajo
+
+3. Typescript:
+--declaracion de variables primitivas
+--definicion de metodos
+--imprimir en consola
+
+4. Fundamentos de angular:
+--Interpolación (2 llaves "{{}}")
+--One way binding events

@@ -1,0 +1,10 @@
+<h1>Calculadora de numeros</h1>
+<p>Num 1 <input type="number" [(ngModel)]="num1"></p>
+<p>Num 2 <input type="number" [(ngModel)]="num2"></p>
+<input type="button" value="+" (click)="sumar()">
+<input type="button" value="-" (click)="restar()">
+<input type="button" value="*" (click)="multi()">
+<input type="button" value="/" (click)="div()">
+
+<p>Resultado = <input type="text" [value]="total" disabled></p>
+<hr>
