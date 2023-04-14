@@ -25,7 +25,6 @@ export class FormularioDatosComponent {
   }
 
   enviarDatos(){
-    let cad = this.acepta?"Acepta":"NO acepta"
     this.texto = this.correo +"," +this.direccion+","+this.telefono+","+this.comunidad+","+this.pago+","+(this.acepta?"Acepta":"NO acepta")
   }
 }
