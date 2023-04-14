@@ -30,7 +30,6 @@ export class Bicicleta{
     public set color(value: string) {
         this._color = value
     }
-
     public get marca(): string {
         return this._marca
     }
