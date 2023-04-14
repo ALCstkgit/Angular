@@ -10,7 +10,9 @@ export class Componente2TypescriptComponent {
   cad1 : string = "hola"
   cad2 : string = 'hola2'
   //Los acentos invertidos te permiten introducir directamente el valor de las variables
-  cad3 : string = `${this.cad1}, ${this.cad2}, hola3`
+  cad3 : string = `${this.cad1}
+  ${this.cad2}
+  hola3`
   b : boolean = true
   nu : any = null
   un : undefined
