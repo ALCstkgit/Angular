@@ -1,0 +1,8 @@
+<h1>Union de tipos</h1>
+<input type="number" [(ngModel)]="variableUnion" min="1" max="3">
+<p>{{variableUnion}}</p>
+<h1>Enums</h1>
+<select [(ngModel)]="direccion">
+    <option *ngFor="let dir of direcciones" [value]="dir">{{dir}}</option>
+</select>
+<p>Valor seleccionado: {{direccion}}</p>

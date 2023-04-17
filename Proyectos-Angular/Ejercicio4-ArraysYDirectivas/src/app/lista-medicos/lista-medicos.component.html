@@ -1,0 +1,15 @@
+<button (click)="addMedico()">Agregar Medico</button>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cedula</th>
+        <th>Imagen</th>
+    </tr>
+    <tr *ngFor="let m of medicos">
+        <td>{{m.nombre}}</td>
+        <td>{{m.apellido}}</td>
+        <td>{{m.cedula}}</td>
+        <td><img [src]="m.img"></td>
+    </tr>
+</table>

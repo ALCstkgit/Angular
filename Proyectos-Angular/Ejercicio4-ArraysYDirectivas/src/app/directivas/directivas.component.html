@@ -1,0 +1,20 @@
+<h1>Directivas</h1>
+<h2>Directivas if y template</h2>
+Edad:<input type="number" [(ngModel)]="edad">
+<p *ngIf="edad>17;else menor">Eres MAYOR de edad</p>
+<ng-template #menor>
+    <p>Eres MENOR de edad</p>
+</ng-template>
+<h2>Directiva for</h2>
+<ul>
+    <li *ngFor="let i of alumnos">{{i}}</li>
+</ul>
+<h2>Directiva switch</h2>
+Numero: <input type="number" [(ngModel)]="num" min="0">
+<div [ngSwitch]="num">
+    <p *ngSwitchCase="0">Cero</p>
+    <p *ngSwitchCase="1">Uno</p>
+    <p *ngSwitchCase="2">Dos</p>
+    <p *ngSwitchCase="3">Tres</p>
+    <p *ngSwitchDefault>Más de tres</p>
+</div>
