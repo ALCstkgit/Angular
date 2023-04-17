@@ -62,6 +62,11 @@ export class Bicicleta{
     }
 
     public toString():string{
-        return `Color: ${this.color}, Marca:${this.marca}, Velocidad:${this.velocidad}, Piñones:${this.pinones}, Platos:${this.platos}, Electrica?:${(this.electrica?"Electrica":"No electrica")}`
+        return `Color: ${this.color}
+        Marca:${this.marca}
+        Velocidad:${this.velocidad}
+        Piñones:${this.pinones}
+        Platos:${this.platos}
+        Electrica?:${(this.electrica?"Electrica":"No electrica")}`
     }
 }
