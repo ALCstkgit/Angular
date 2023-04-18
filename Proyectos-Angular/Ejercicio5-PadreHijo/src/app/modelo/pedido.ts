@@ -5,12 +5,12 @@ export class Pedido{
     private _totalProd: number;
     private _importe: number;
 
-    constructor(idPedido:number, idCliente:number, nombreCliente:string, totalProd:number, importe:number){
-        this._idPedido=idPedido
-        this._idCliente=idCliente
-        this._nombreCliente=nombreCliente
-        this._totalProd=totalProd
-        this._importe=importe
+    constructor(){
+        this._idPedido=0
+        this._idCliente=0
+        this._nombreCliente=""
+        this._totalProd=0
+        this._importe=0
     }
 
     public get importe(): number {

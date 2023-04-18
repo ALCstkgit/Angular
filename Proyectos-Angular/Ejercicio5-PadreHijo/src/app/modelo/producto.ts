@@ -7,12 +7,12 @@ export class Producto{
     private _precio: number;
     private _tipo: Tipos;
 
-    constructor(id:number, nombre:string, cantidadExistencias:number, precio:number, tipo:Tipos){
-        this._id = id
-        this._nombre = nombre
-        this._cantidadExistencias = cantidadExistencias
-        this._precio = precio
-        this._tipo = tipo
+    constructor(){
+        this._id = 0
+        this._nombre = ""
+        this._cantidadExistencias = 0
+        this._precio = 0
+        this._tipo = Tipos.Alimento
     }
 
     public get tipo(): Tipos {

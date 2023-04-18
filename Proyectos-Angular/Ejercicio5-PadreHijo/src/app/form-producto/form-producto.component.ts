@@ -9,30 +9,26 @@ import { Tipos } from '../modelo/tipos';
 })
 export class FormProductoComponent {
   productos:Producto[]
+  producto:Producto
   contador:number
-  nombre:string
-  cantidad:number
-  precio:number
-  tipo:Tipos
   tipos:string[]
 
   constructor(){
+    this.producto = new Producto()
     this.productos = []
     this.contador = 1
-    this.nombre = ""
-    this.cantidad = 0
-    this.precio = 0
-    this.tipo = Tipos.Alimento
     this.tipos = Object.values(Tipos)
   }
 
   addProducto(){
-    let p: Producto[] = this.productos.filter(pr => pr.nombre == this.nombre)
+    let p: Producto[] = this.productos.filter(pr => pr.nombre == this.producto.nombre)
     if(p.length==0){
-      this.productos.push(new Producto(this.contador,this.nombre,this.cantidad,this.precio,this.tipo))
+      this.producto.id = this.contador
+      this.productos.push(this.producto)
       this.contador++
     }else{
-      p[0].cantidadExistencias += this.cantidad
+      p[0].cantidadExistencias += this.producto.cantidadExistencias
     }
+    this.producto = new Producto()
   }
 }
