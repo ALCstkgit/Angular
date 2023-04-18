@@ -4,11 +4,11 @@ export class Medico{
     private _cedula: number;
     private _img: string;
 
-    constructor(nombre:string, apellido:string, cedula:number, img:string){
-        this._nombre=nombre
-        this._apellido=apellido
-        this._cedula=cedula
-        this._img=img
+    constructor(){
+        this._nombre=""
+        this._apellido=""
+        this._cedula=0
+        this._img=""
     }
     public get img(): string {
         return this._img;

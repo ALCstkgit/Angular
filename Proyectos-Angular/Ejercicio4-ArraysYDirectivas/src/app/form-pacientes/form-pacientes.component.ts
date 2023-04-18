@@ -9,20 +9,15 @@ import { Paciente  } from '../modelo/paciente';
 })
 export class FormPacientesComponent {
   @Output() newItemEvent : EventEmitter<Paciente>
-  nombre:string
-  apellido:string
-  dni:string
-  telefono:string
+  paciente:Paciente
   
   constructor(){
+    this.paciente = new Paciente()
     this.newItemEvent = new EventEmitter<Paciente>()
-    this.nombre = ""
-    this.apellido = ""
-    this.dni = ""
-    this.telefono = ""
   }
 
   sendPaciente(){
-    this.newItemEvent.emit(new Paciente(this.nombre,this.apellido,this.dni,this.telefono))
+    this.newItemEvent.emit(this.paciente)
+    this.paciente = new Paciente()
   }
 }

@@ -4,11 +4,11 @@ export class Paciente{
     private _dni: string;
     private _telefono: string;
 
-    constructor(nombre: string, apellido:string, dni:string, telefono:string){
-        this._nombre=nombre
-        this._apellido=apellido
-        this._dni=dni
-        this._telefono=telefono
+    constructor(){
+        this._nombre=""
+        this._apellido=""
+        this._dni=""
+        this._telefono=""
     }
     
     public get telefono(): string {

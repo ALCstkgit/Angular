@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Medico } from '../modelo/medico';
 
 @Component({
@@ -6,10 +6,14 @@ import { Medico } from '../modelo/medico';
   templateUrl: './form-medicos.component.html',
   styleUrls: ['./form-medicos.component.css']
 })
-export class FormMedicosComponent {
+export class FormMedicosComponent{
   medico: Medico
 
   constructor(){
-    this.medico = new Medico("","",0,"")
+    this.medico = new Medico()
+  }
+
+  resetM(m:Medico){
+    this.medico = m
   }
 }

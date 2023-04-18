@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Medico } from '../modelo/medico';
 
 @Component({
@@ -7,14 +7,17 @@ import { Medico } from '../modelo/medico';
   styleUrls: ['./lista-medicos.component.css']
 })
 export class ListaMedicosComponent {
+  @Output() e:EventEmitter<Medico>
   @Input() medico:Medico
   medicos: Medico[]
 
   constructor(){
-    this.medico = new Medico("","",0,"")
+    this.e = new EventEmitter<Medico>()
+    this.medico = new Medico()
     this.medicos=[]
   }
   addMedico(){
-    this.medicos.push(new Medico(this.medico.nombre,this.medico.apellido,this.medico.cedula,this.medico.img))
+    this.medicos.push(this.medico)
+    this.e.emit(new Medico())
   }
 }
