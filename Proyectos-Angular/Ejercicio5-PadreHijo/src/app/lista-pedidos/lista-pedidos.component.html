@@ -1,0 +1,19 @@
+<app-form-pedidos (newItemEvent)="igualaArr($event)"></app-form-pedidos>
+<div *ngIf="pedidos.length > 0">
+    <table>
+        <tr>
+            <th>IdPedido</th>
+            <th>IdClient</th>
+            <th>Nombre Client</th>
+            <th>Total Prod</th>
+            <th>Importe</th>
+        </tr>
+        <tr *ngFor="let p of pedidos">
+            <td>{{p.idPedido}}</td>
+            <td>{{p.idCliente}}</td>
+            <td>{{p.nombreCliente}}</td>
+            <td>{{p.totalProd}}</td>
+            <td>{{p.importe}}</td>
+        </tr>
+    </table>
+</div>
