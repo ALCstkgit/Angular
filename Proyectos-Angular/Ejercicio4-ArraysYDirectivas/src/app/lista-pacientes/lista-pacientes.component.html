@@ -1,15 +1,17 @@
 <app-form-pacientes (newItemEvent)="addPaciente($event)"></app-form-pacientes>
-<table>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>DNI</th>
-        <th>Telefono</th>
-    </tr>
-    <tr *ngFor="let paciente of listPacientes">
-        <td>{{paciente.nombre}}</td>
-        <td>{{paciente.apellido}}</td>
-        <td>{{paciente.dni}}</td>
-        <td>{{paciente.telefono}}</td>
-    </tr>
-</table>
+<div *ngIf="listPacientes.length>0">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Telefono</th>
+        </tr>
+        <tr *ngFor="let paciente of listPacientes">
+            <td>{{paciente.nombre}}</td>
+            <td>{{paciente.apellido}}</td>
+            <td>{{paciente.dni}}</td>
+            <td>{{paciente.telefono}}</td>
+        </tr>
+    </table>
+</div>

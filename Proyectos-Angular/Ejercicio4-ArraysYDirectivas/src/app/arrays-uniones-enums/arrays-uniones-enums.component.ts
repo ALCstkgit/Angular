@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ArraysUnionesEnumsComponent {
   arr:number[]
-  direcciones = Object.values(Direcciones)
+  direcciones:string[] = Object.values(Direcciones)
   variableUnion: 1 | 2 | 3
   direccion : string
 
