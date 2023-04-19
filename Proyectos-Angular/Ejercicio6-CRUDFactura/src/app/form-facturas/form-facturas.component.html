@@ -1,0 +1,26 @@
+<h2>Crud</h2>
+IdFactura:<input type="number" [(ngModel)]="factura.idFactura"><br>
+IdCliente:<input type="number" [(ngModel)]="factura.idCliente"><br>
+TotalFactura:<input type="number" [(ngModel)]="factura.totalFactura"><br>
+Iva:<input type="number" [(ngModel)]="factura.iva"><br><br>
+<button (click)="crear()">Añadir</button>
+<button (click)="facturasService.delete(factura)">Borrar</button>
+<button (click)="modificar()">Modificar</button>
+<button (click)="muestraF()">Buscar</button><br>
+<p *ngIf="fMuestra.idFactura > 0">{{fMuestra.toString()}}</p>
+<div *ngIf="facturasService.facturas.length > 0">
+    <table>
+        <tr>
+            <th>IdFactura</th>
+            <th>IdCliente</th>
+            <th>TotalFactura</th>
+            <th>Iva</th>
+        </tr>
+        <tr *ngFor="let f of facturasService.facturas">
+            <td>{{f.idFactura}}</td>
+            <td>{{f.idCliente}}</td>
+            <td>{{f.totalFactura}}</td>
+            <td>{{f.iva}}</td>
+        </tr>
+    </table>
+</div>
