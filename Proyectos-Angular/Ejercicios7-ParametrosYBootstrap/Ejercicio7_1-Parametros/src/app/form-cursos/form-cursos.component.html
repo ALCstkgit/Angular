@@ -1,0 +1,7 @@
+<h2>Formulario de Modificación</h2>
+Nombre: <input type="text" [(ngModel)]="curso.nombre"><br>
+Horas: <input type="number" [(ngModel)]="curso.duracion"><br>
+Nivel: <select [(ngModel)]="curso.nivel">
+    <option *ngFor="let n of niveles" [value]="n">{{n}}</option>
+</select><br>
+<button (click)="mod()">Modificar</button>
