@@ -1,0 +1,22 @@
+<h3>ngIf y ngTemplate</h3>
+Texto a ver: <input type="checkbox" [(ngModel)]="b">
+<p *ngIf="b; else otroTexto">Checkbox marcada</p>
+<ng-template #otroTexto>
+    <p>Checkbox desmarcada</p>
+</ng-template>
+<hr>
+<h3>ngFor</h3>
+<p>Elementos de enumeracion</p>
+<ul>
+    <li *ngFor="let c of arr">{{c}}</li>
+</ul>
+<hr>
+<h3>ngSwitch</h3>
+Introduzca el nombre de una persona: <input type="text" [(ngModel)]="persona">
+<div [ngSwitch]="persona">
+    <p *ngSwitchCase="'Paco'">Paco encontrado</p>
+    <p *ngSwitchCase="'Maria'">Maria encontrada</p>
+    <p *ngSwitchCase="'Juan'">Juan encontrado/p>
+    <p *ngSwitchCase="'Lucia'">Lucia encontrada</p>
+    <p *ngSwitchDefault>Nombre desconocido</p>
+</div>

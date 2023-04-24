@@ -1,0 +1,3 @@
+Id:<input type="number" [(ngModel)]="num"><br>
+Accion:<input type="text" [(ngModel)]="accion"><br>
+<button [routerLink]="['/recibirParametros',num]" [queryParams]="{acc:accion}">Enviar</button>
