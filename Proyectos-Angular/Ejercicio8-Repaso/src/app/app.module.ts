@@ -15,6 +15,10 @@ import { PasoUnParametroComponent } from './paso-un-parametro/paso-un-parametro.
 import { RecibeUnParametroComponent } from './recibe-un-parametro/recibe-un-parametro.component';
 import { PasoVariosParametrosComponent } from './paso-varios-parametros/paso-varios-parametros.component';
 import { RecibeVariosParametrosComponent } from './recibe-varios-parametros/recibe-varios-parametros.component';
+import { HijoPadreHijoComponent } from './hijo-padre-hijo/hijo-padre-hijo.component';
+import { PadrePadreHijoComponent } from './padre-padre-hijo/padre-padre-hijo.component';
+import { HijoHijoPadreComponent } from './hijo-hijo-padre/hijo-hijo-padre.component';
+import { PadreHijoPadreComponent } from './padre-hijo-padre/padre-hijo-padre.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { RecibeVariosParametrosComponent } from './recibe-varios-parametros/reci
     PasoUnParametroComponent,
     RecibeUnParametroComponent,
     PasoVariosParametrosComponent,
-    RecibeVariosParametrosComponent
+    RecibeVariosParametrosComponent,
+    HijoPadreHijoComponent,
+    PadrePadreHijoComponent,
+    HijoHijoPadreComponent,
+    PadreHijoPadreComponent
   ],
   imports: [
     BrowserModule,

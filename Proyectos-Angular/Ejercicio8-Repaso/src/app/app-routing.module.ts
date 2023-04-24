@@ -10,6 +10,8 @@ import { PasoUnParametroComponent } from './paso-un-parametro/paso-un-parametro.
 import { RecibeUnParametroComponent } from './recibe-un-parametro/recibe-un-parametro.component';
 import { PasoVariosParametrosComponent } from './paso-varios-parametros/paso-varios-parametros.component';
 import { RecibeVariosParametrosComponent } from './recibe-varios-parametros/recibe-varios-parametros.component';
+import { PadrePadreHijoComponent } from './padre-padre-hijo/padre-padre-hijo.component';
+import { PadreHijoPadreComponent } from './padre-hijo-padre/padre-hijo-padre.component';
 
 const routes: Routes = [
   {path:"interpolacion",component:InterpolacionComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path:"pasarParametro",component:PasoUnParametroComponent},
   {path:"recibirParametro/:id",component:RecibeUnParametroComponent},
   {path:"pasarParametros",component:PasoVariosParametrosComponent},
-  {path:"recibirParametros/:id",component:RecibeVariosParametrosComponent},
+  {path:"recibirParametros",component:RecibeVariosParametrosComponent},
+  {path:"padreHijo",component:PadrePadreHijoComponent},
+  {path:"hijoPadre",component:PadreHijoPadreComponent},
 ];
 
 @NgModule({
