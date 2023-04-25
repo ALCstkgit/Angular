@@ -22,7 +22,7 @@ export class FormCursosComponent{
 
   ngOnInit(){
     this.ruta.params.subscribe((val) =>
-      this.curso=new Curso((this.comprobarId()==true?0:val['id']),"",0,Niveles.Iniciacion)
+      this.curso.id= this.comprobarId()==true?0:val['id']
     )
   }
 
