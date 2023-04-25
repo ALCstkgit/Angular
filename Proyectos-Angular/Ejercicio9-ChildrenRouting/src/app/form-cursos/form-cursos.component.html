@@ -1,0 +1,9 @@
+<h2>Formulario Altas / Modificaciones</h2>
+Id: <input type="number" [(ngModel)]="curso.id" [disabled]="dis"><br>
+Nombre: <input type="text" [(ngModel)]="curso.nombre"><br>
+Horas: <input type="number" [(ngModel)]="curso.duracion"><br>
+Nivel: <select [(ngModel)]="curso.nivel">
+    <option *ngFor="let n of niveles" [value]="n">{{n}}</option>
+</select><br>
+<button (click)="funBtn()">Aceptar</button>
+<button routerLink="/">Cancelar</button>

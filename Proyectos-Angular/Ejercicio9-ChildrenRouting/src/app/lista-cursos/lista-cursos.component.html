@@ -1,0 +1,19 @@
+<h2>Lista de cursos</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>NumHoras</th>
+        <th colspan="2">Nivel</th>
+    </tr>
+    <tr *ngFor="let c of crudCursosService.cursos">
+        <td>{{c.id}}</td>
+        <td>{{c.nombre}}</td>
+        <td>{{c.duracion}}</td>
+        <td>{{c.nivel}}</td>
+        <td><button [routerLink]="['/mod',c.id]">Modificar</button></td>
+    </tr>
+</table>
+<button routerLink="/alta">Alta</button>
+
+<router-outlet></router-outlet>
