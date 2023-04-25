@@ -20,13 +20,6 @@ export class FormCursosComponent{
     this.dis = !this.comprobarId()
   }
 
-  ngOnInit(){
-    this.curso=new Curso((this.comprobarId()==true?0:this.ruta.snapshot.params['id']),"",0,Niveles.Iniciacion)
-    //alert(this.curso.id)
-    this.niveles = Object.values(Niveles)
-    this.dis = !this.comprobarId()
-  }
-
   funBtn(){
     if(this.comprobarId()) this.crudService.create(this.curso)
     else this.crudService.update(this.curso)
