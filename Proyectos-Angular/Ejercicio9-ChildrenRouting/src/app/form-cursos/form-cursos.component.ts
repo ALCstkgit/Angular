@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Curso } from '../modelo/curso';
 import { Niveles } from '../modelo/niveles';
@@ -15,9 +15,15 @@ export class FormCursosComponent{
   dis:boolean
 
   constructor(private ruta:ActivatedRoute,private router:Router, private crudService:CrudCursosService){
-    this.curso=new Curso((this.comprobarId()==true?0:this.ruta.snapshot.params['id']),"",0,Niveles.Iniciacion)
+    this.curso= this.curso=new Curso(0,"",0,Niveles.Iniciacion)
     this.niveles = Object.values(Niveles)
     this.dis = !this.comprobarId()
+  }
+
+  ngOnInit(){
+    this.ruta.params.subscribe((val) =>
+      this.curso=new Curso((this.comprobarId()==true?0:val['id']),"",0,Niveles.Iniciacion)
+    )
   }
 
   funBtn(){
