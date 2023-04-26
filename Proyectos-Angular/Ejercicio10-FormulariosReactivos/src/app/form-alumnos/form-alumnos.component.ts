@@ -12,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FormAlumnosComponent{
   form : FormGroup
   al: Alumno
-  //id:number
   dis:boolean
 
   constructor(private crudAl:CrudAlumnosService, private router:ActivatedRoute, private route:Router){
@@ -21,8 +20,7 @@ export class FormAlumnosComponent{
   ngOnInit(){
     this.router.params.subscribe(
       (val) => {
-        let i = val['id']
-        this.crudAl.buscarAlumno(i).subscribe(
+        this.crudAl.buscarAlumno(val['id']).subscribe(
           (alu) => {
             this.al = alu
             this.form = new FormGroup({
