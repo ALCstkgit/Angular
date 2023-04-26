@@ -15,21 +15,21 @@ export class FormCursosComponent{
   dis:boolean
 
   constructor(private ruta:ActivatedRoute,private router:Router, private crudService:CrudCursosService){
-    this.curso= this.curso=new Curso(0,"",0,Niveles.Iniciacion)
     this.niveles = Object.values(Niveles)
     this.dis = !this.comprobarId()
   }
 
   ngOnInit(){
-    this.ruta.params.subscribe((val) =>
-      this.curso.id= this.comprobarId()==true?0:val['id']
+    this.ruta.params.subscribe(
+      (val) =>{
+        let c = this.crudService.devolverCurso(val['id'])
+        this.curso = new Curso(c.id,c.nombre,c.duracion,c.nivel)
+      }
     )
   }
 
   funBtn(){
-    if(this.comprobarId()) this.crudService.create(this.curso)
-    else this.crudService.update(this.curso)
-
+    this.comprobarId()?this.crudService.create(this.curso):this.crudService.update(this.curso)
     this.router.navigate(["/"])
   }
 

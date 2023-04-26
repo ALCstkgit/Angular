@@ -22,13 +22,16 @@ export class CrudCursosService {
   }
 
   create(curso:Curso){
-    if(this.read(curso) == -1)this.cursos.push(curso)
-    else alert("Ya existe un curso con ese id, no se introducirá nada")
+    this.read(curso) == -1 ? this.cursos.push(curso):alert("Ya existe un curso con ese id, no se introducirá nada")
+  }
+
+  devolverCurso(id:number):Curso{
+    let c = new Curso(id,"",0,Niveles.Iniciacion)
+    return this.read(c) >-1?this.cursos[this.read(c)]:new Curso(0,"",0,Niveles.Iniciacion)
   }
 
   private read(curso:Curso):number{
     let cur = this.cursos.find(c => c.id == curso.id)
-    if(cur != undefined) return this.cursos.indexOf(cur)
-    else return -1
+    return cur != undefined?this.cursos.indexOf(cur):-1
   }
 }
