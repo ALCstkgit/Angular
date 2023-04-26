@@ -1,0 +1,23 @@
+HTML:
+<form #*nombre*=ngForm [FormGroup]="*attrTs*" (submit)="*metodoTs*">
+	<input type="text" formControlName="*nombre*">
+	<input type="submit" name="Enviar">
+	<input type="button" name="Cancelar">  <----IMPORTANTE TYPE BUTTON
+</form>
+
+TS:
+1.Importar en app.module ReactiveFormsModule
+2.Instanciar FormGroup
+-attrTs: FormGroup
+
+Ejercicio:
+-Alumno (interfaz):
+--id
+--dni
+--nombre
+--hrs-Formacion
+
+El servicio devuelven observables
+(buscar devuelve alumno observable y mostrar devuelve array observable)
+
+Componente listar alumnos (subscribirse al observable de mostrar)

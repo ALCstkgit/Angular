@@ -1,0 +1,9 @@
+<h1>Form Alumno</h1>
+<form [formGroup]="form" (ngSubmit)="funBtn()">
+    Id: <input type="number" formControlName="id" required><br>
+    Dni: <input type="text" formControlName="dni" required><br>
+    Nombre: <input type="text" formControlName="nombre" required><br>
+    Horas: <input type="number" formControlName="hrs" required><br>
+    <input type="submit" [disabled]="form.invalid">
+    <input type="button" value="Cancelar" routerLink="/">
+</form>

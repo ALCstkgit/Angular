@@ -1,0 +1,18 @@
+<h1>Lista</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Dni</th>
+        <th>Nombre</th>
+        <th colspan="2">Horas</th>
+    </tr>
+    <tr *ngFor="let a of alumnos">
+        <td>{{a.id}}</td>
+        <td>{{a.dni}}</td>
+        <td>{{a.nombre}}</td>
+        <td>{{a.hrs}}</td>
+        <td><button [routerLink]="['/mod',a.id]">Modificar</button></td>
+    </tr>
+</table>
+<button routerLink="/alta">Alta</button>
+<router-outlet></router-outlet>
