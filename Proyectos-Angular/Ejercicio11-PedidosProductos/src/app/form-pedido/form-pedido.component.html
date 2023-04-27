@@ -1,0 +1,44 @@
+<h1>Pedido</h1>
+<form (ngSubmit)="insert()" [formGroup]="form">
+    IdPedido: <input type="number" formControlName="idPedido" required readonly><br>
+    IdCliente: <input type="number" formControlName="idCliente" required><br>
+    Forma de Pago: <input type="text" formControlName="formaPago" required><br>
+    Direccion: <input type="text" formControlName="direccion" required><br>
+    <input type="button" value="Agregar detalles de Pedido" (click)="enviar()" [disabled]="form.invalid">
+    <router-outlet></router-outlet>
+    <input type="submit" value="Agregar Pedido" *ngIf="addPosible">
+</form>
+
+<div *ngIf="pedidosServicio.pedidos.length > 0">
+    <h1>Lista Pedidos</h1>
+    <table>
+        <tr>
+            <th>Id Pedido</th>
+            <th>Id Cliente</th>
+            <th>Forma Pago</th>
+            <th>Direccion</th>
+        </tr>
+        <tr *ngFor="let p of pedidosServicio.pedidos">
+            <td>{{p.idPedido}}</td>
+            <td>{{p.idCliente}}</td>
+            <td>{{p.formaPago}}</td>
+            <td>{{p.direccion}}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="pedidosServicio.productos.length > 0">
+    <h1>Lista Productos</h1>
+    <table>
+        <tr>
+            <th>Id Pedido</th>
+            <th>Id Producto</th>
+            <th>Cantidad</th>
+        </tr>
+        <tr *ngFor="let p of pedidosServicio.productos">
+            <td>{{p.idProducto}}</td>
+            <td>{{p.idPedido}}</td>
+            <td>{{p.cantidad}}</td>
+        </tr>
+    </table>
+</div>

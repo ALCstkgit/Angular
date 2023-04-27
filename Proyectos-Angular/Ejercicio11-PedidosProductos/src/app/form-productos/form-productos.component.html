@@ -1,0 +1,7 @@
+<div>
+    <form (ngSubmit)="enviar()" [formGroup]="form">
+        IdProducto: <input type="number" formControlName="idProducto" required>
+        Cantidad: <input type="number" formControlName="cantidad" required><br>
+        <input type="submit" value="Agregar" [disabled]="form.invalid">
+    </form>
+</div>
