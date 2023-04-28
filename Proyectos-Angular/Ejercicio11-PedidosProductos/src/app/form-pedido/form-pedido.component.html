@@ -6,7 +6,7 @@
     Direccion: <input type="text" formControlName="direccion" required><br>
     <input type="button" value="Agregar detalles de Pedido" (click)="enviar()" [disabled]="form.invalid">
     <router-outlet></router-outlet>
-    <input type="submit" value="Agregar Pedido" *ngIf="addPosible">
+    <input type="submit" value="Agregar Pedido" *ngIf="addPosible" [disabled]="pedidosServicio.productosAux.length==0">
 </form>
 
 <div *ngIf="pedidosServicio.pedidos.length > 0">
