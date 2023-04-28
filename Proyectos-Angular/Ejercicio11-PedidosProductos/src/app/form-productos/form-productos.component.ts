@@ -14,8 +14,8 @@ export class FormProductosComponent {
 
   constructor(private router:ActivatedRoute, public pedidosServicio:InfoPedidosService){
     this.form = new FormGroup({
-      idProducto: new FormControl(0),
-      cantidad: new FormControl(0)
+      idProducto: new FormControl(''),
+      cantidad: new FormControl('')
     })
   }
 
@@ -27,6 +27,6 @@ export class FormProductosComponent {
         this.form.value.cantidad
       )
     )
-    Object.keys(this.form.controls).forEach(key=>this.form.get(key)?.setValue(0))
+    Object.keys(this.form.controls).forEach(key=>this.form.get(key)?.setValue(''))
   }
 }
