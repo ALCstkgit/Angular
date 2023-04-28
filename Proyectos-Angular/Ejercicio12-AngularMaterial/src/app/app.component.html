@@ -1,0 +1,24 @@
+<div class="example-container">
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sNav.toggle()">
+    <mat-icon *ngIf="!sNav.opened">more_vert</mat-icon>
+    <mat-icon *ngIf="sNav.opened">clear</mat-icon>
+  </button>
+  <span>Ejercicio 12 Adrian Lopez</span>
+</mat-toolbar>
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav #sNav mode="over" opened="false">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let m of menS.menus" [routerLink]="m.url" (click)="sNav.toggle()">
+        <div style="display: flex;">
+          <div style="width: 20%;"><mat-icon class="icon-item-list">{{m.nombreIcono}}</mat-icon></div>
+          <div style="margin-left: 20px; width: 100px;"><span class="text-item-list">{{m.nombreMenu}}</span></div>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
