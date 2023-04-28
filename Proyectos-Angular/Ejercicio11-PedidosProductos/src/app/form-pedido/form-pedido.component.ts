@@ -21,9 +21,7 @@ export class FormPedidoComponent {
       direccion: new FormControl('')
     })
     this.addPosible = false
-  }
-
-  ngOnInit(){
+    this.form.get('idPedido')?.disable()
   }
 
   enviar(){
@@ -43,6 +41,8 @@ export class FormPedidoComponent {
     )
     this.addPosible = false
     this.ruta.navigate(['/'])
+    /*this.form.reset()
+    this.form.get('idPedido')?.setValue(this.pedidosServicio.getNuevoId())*/
     Object.keys(this.form.controls).forEach(
       key => {
         this.form.get(key)?.enable()

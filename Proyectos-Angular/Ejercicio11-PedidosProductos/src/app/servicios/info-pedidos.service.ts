@@ -32,6 +32,8 @@ export class InfoPedidosService {
   addPedido(pedido:Pedido){
     this.pedidos.push(pedido)
     this.productosAux.forEach(p => this.productos.push(p))
+    //this.productos.push(...this.productosAux)
+    //Con esto pierde la referencia, usar splice
     this.productosAux = []
   }
 
